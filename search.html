@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>全文検索</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="apple-touch-icon" href="icon.png" />
+        <link rel="stylesheet" href="search.css" />
+    </head>
+
+    <body>
+        <div class="post">
+            <h3 class="post-title">全文検索</h3>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p>入力欄フォーカス中は、エンターキー、矢印キーでベージ送りします。</p>
+                    </li>
+                </ul>
+            </div>
+
+            <script src="index.js"></script>
+
+            <div id="searchbox">
+                <input type="text" id="q" onkeyup="do_find(this.value)" onkeydown="key(event.keyCode)" autocomplete="off" placeholder="サイト内を検索" size="60">　<span id="stat"></span>
+                <div id="navi"></div>
+                <div id="result"></div>
+            </div>
+
+            <script src="search.js"></script>
+
+            <noscript><p class="notice">この検索機能は JavaScript を使用しています。</p></noscript>
+        </div>
+    </body>
+</html>
