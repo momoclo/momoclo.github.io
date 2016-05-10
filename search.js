@@ -47,12 +47,12 @@ var bodylist = [];
 var st = gid("stat");
 var re = gid("result");
 var nv = gid("navi");
-var max = 15;
+var max = 25;
 var KC = {
     enter: 13,
     left : 37,
-    right: 39,
     up   : 38,
+    right: 39,
     down : 40
 };
 
@@ -118,7 +118,7 @@ function find(v) {
         }
     }
     if (result.length) {
-        st.innerHTML = result.length + "件見つかりました。";
+        st.innerHTML = data.length + "件中 " + result.length + "件見つかりました。";
     }
     var end = new Date().getTime();
 
@@ -220,8 +220,10 @@ function view(result, offset) {
         with(data[num]) {
             buf.push(
                 "<dt><a href='", url, "'>",
-                date, " ",
-                title || "無題", "</a>",
+                date,
+                " ",
+                title || "無題",
+                "</a>",
                 "<dd>",
                 snippet(bodylist[num], idx, len)
             );
